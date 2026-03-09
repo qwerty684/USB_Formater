@@ -1,4 +1,4 @@
-# USB Format
+# Flutter USB Format (Android, OSX, Windows)
 
 Premium Flutter project for a modern USB formatting experience on desktop and mobile.
 
