@@ -4,6 +4,25 @@ Premium Flutter project for a modern USB formatting experience on desktop and mo
 
 `USB Format` is an open-source Flutter app with a polished Material 3 interface, desktop-first responsive layout, localization support, and a safe formatting flow simulation designed for future real-device expansion.
 
+## Downloads
+
+<p align="center">
+  <a href="https://github.com/qwerty684/USB_Formater/releases/latest/download/USB-Format-macOS.dmg">
+    <img alt="Download macOS DMG" src="https://img.shields.io/badge/Download-macOS%20DMG-8B5CF6?style=for-the-badge&logo=apple&logoColor=white" />
+  </a>
+  <a href="https://github.com/qwerty684/USB_Formater/releases/latest/download/USB-Format-macOS-app.zip">
+    <img alt="Download macOS App ZIP" src="https://img.shields.io/badge/Download-macOS%20App%20ZIP-C026D3?style=for-the-badge&logo=apple&logoColor=white" />
+  </a>
+  <a href="https://github.com/qwerty684/USB_Formater/releases/latest/download/USB-Format-android.apk">
+    <img alt="Download Android APK" src="https://img.shields.io/badge/Download-Android%20APK-F97316?style=for-the-badge&logo=android&logoColor=white" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/qwerty684/USB_Formater/releases">
+    View all releases
+  </a>
+</p>
 
 ## Support the Project
 
