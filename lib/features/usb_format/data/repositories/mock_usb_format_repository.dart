@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:usb_formater/features/usb_format/data/datasources/platform_usb_device_data_source.dart';
 import 'package:usb_formater/features/usb_format/data/models/mock_usb_devices.dart';
+import 'package:usb_formater/features/usb_format/domain/exceptions/usb_format_exceptions.dart';
 import 'package:usb_formater/features/usb_format/domain/entities/file_system_format.dart';
 import 'package:usb_formater/features/usb_format/domain/entities/formatting_progress.dart';
 import 'package:usb_formater/features/usb_format/domain/entities/usb_device.dart';
@@ -10,10 +11,6 @@ import 'package:usb_formater/features/usb_format/domain/repositories/usb_format_
 final usbFormatRepositoryProvider = Provider<UsbFormatRepository>(
   (ref) => UsbFormatRepositoryImpl(PlatformUsbDeviceDataSource()),
 );
-
-class UsbDeviceDiscoveryUnsupportedException implements Exception {
-  const UsbDeviceDiscoveryUnsupportedException();
-}
 
 class UsbFormatRepositoryImpl implements UsbFormatRepository {
   UsbFormatRepositoryImpl(this._deviceDataSource);

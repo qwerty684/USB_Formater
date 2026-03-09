@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:usb_formater/core/utils/volume_name_validator.dart';
 import 'package:usb_formater/features/usb_format/data/repositories/mock_usb_format_repository.dart';
+import 'package:usb_formater/features/usb_format/domain/exceptions/usb_format_exceptions.dart';
 import 'package:usb_formater/features/usb_format/domain/entities/file_system_format.dart';
 import 'package:usb_formater/features/usb_format/domain/entities/formatting_progress.dart';
 import 'package:usb_formater/features/usb_format/domain/entities/usb_device.dart';

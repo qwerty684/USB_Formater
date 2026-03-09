@@ -21,9 +21,9 @@ class FormatOptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final cardPadding = isDesktop ? 24.0 : 16.0;
-    final iconBoxSize = isDesktop ? 64.0 : 44.0;
-    final iconRadius = isDesktop ? 18.0 : 14.0;
+    final cardPadding = isDesktop ? 20.0 : 16.0;
+    final iconBoxSize = isDesktop ? 56.0 : 44.0;
+    final iconRadius = isDesktop ? 16.0 : 14.0;
 
     return AnimatedScale(
       scale: isSelected ? 1 : 0.98,
@@ -79,7 +79,7 @@ class FormatOptionCard extends StatelessWidget {
                       ),
                       child: Icon(
                         format.icon,
-                        size: isDesktop ? 30 : 24,
+                        size: isDesktop ? 28 : 24,
                         color: isSelected
                             ? Colors.white
                             : AppColors.textPrimary,
@@ -89,7 +89,7 @@ class FormatOptionCard extends StatelessWidget {
                     Text(
                       format.displayName,
                       style: AppTextStyles.cardTitle.copyWith(
-                        fontSize: isDesktop ? 20 : 16,
+                        fontSize: isDesktop ? 18 : 16,
                         color: isSelected
                             ? Colors.white
                             : AppColors.textPrimary,
@@ -99,7 +99,7 @@ class FormatOptionCard extends StatelessWidget {
                     Text(
                       l10n.formatDescription(format),
                       style: AppTextStyles.cardSubtitle.copyWith(
-                        fontSize: isDesktop ? 15 : 13,
+                        fontSize: isDesktop ? 13 : 13,
                         color: isSelected
                             ? Colors.white.withValues(alpha: 0.92)
                             : AppColors.textSecondary,
@@ -115,15 +115,15 @@ class FormatOptionCard extends StatelessWidget {
                     top: 0,
                     right: 0,
                     child: Container(
-                      width: isDesktop ? 28 : 22,
-                      height: isDesktop ? 28 : 22,
+                      width: isDesktop ? 26 : 22,
+                      height: isDesktop ? 26 : 22,
                       decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.check_rounded,
-                        size: isDesktop ? 18 : 14,
+                        size: isDesktop ? 16 : 14,
                         color: AppColors.orange,
                       ),
                     ),

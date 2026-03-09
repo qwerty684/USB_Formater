@@ -80,6 +80,16 @@ class AppLocalizations {
     return 'Otvori stranicu za podrsku';
   }
 
+  String get creatorCreditTooltip {
+    if (_isEnglish) {
+      return 'Open creator profile';
+    }
+    if (_isGerman) {
+      return 'Creator-Profil offnen';
+    }
+    return 'Otvori profil autora';
+  }
+
   String get languageSelectorLabel {
     if (_isEnglish) {
       return 'Language';
@@ -501,6 +511,16 @@ class AppLocalizations {
     return 'Nije moguce otvoriti link za podrsku.';
   }
 
+  String get couldNotOpenCreatorLink {
+    if (_isEnglish) {
+      return 'Unable to open the creator profile.';
+    }
+    if (_isGerman) {
+      return 'Das Creator-Profil konnte nicht geoffnet werden.';
+    }
+    return 'Nije moguce otvoriti profil autora.';
+  }
+
   String get realDeviceDetectionUnsupported {
     if (_isEnglish) {
       return 'Real connected device detection is currently supported only in the macOS desktop app.';
@@ -637,14 +657,22 @@ class AppLocalizations {
 
   String formatDescription(FileSystemFormat format) {
     switch (format) {
-      case FileSystemFormat.fat32:
+      case FileSystemFormat.fat:
         if (_isEnglish) {
-          return 'Compatible with all devices';
+          return 'For legacy devices';
         }
         if (_isGerman) {
-          return 'Kompatibel mit allen Geraten';
+          return 'Fur alte Gerate';
         }
-        return 'Kompatibilan sa svim uredajima';
+        return 'Za starije uredaje';
+      case FileSystemFormat.fat32:
+        if (_isEnglish) {
+          return 'Compatible with most devices';
+        }
+        if (_isGerman) {
+          return 'Kompatibel mit den meisten Geraten';
+        }
+        return 'Kompatibilan sa vecinom uredaja';
       case FileSystemFormat.ntfs:
         if (_isEnglish) {
           return 'For Windows systems';
@@ -653,6 +681,14 @@ class AppLocalizations {
           return 'Fur Windows-Systeme';
         }
         return 'Za Windows sisteme';
+      case FileSystemFormat.udf:
+        if (_isEnglish) {
+          return 'For discs and archives';
+        }
+        if (_isGerman) {
+          return 'Fur Medien und Archive';
+        }
+        return 'Za diskove i arhive';
       case FileSystemFormat.exfat:
         if (_isEnglish) {
           return 'For large files';
@@ -661,27 +697,51 @@ class AppLocalizations {
           return 'Fur groBe Dateien';
         }
         return 'Za velike fajlove';
-      case FileSystemFormat.ext4:
+      case FileSystemFormat.refs:
         if (_isEnglish) {
-          return 'For Linux systems';
+          return 'For resilient storage';
         }
         if (_isGerman) {
-          return 'Fur Linux-Systeme';
+          return 'Fur ausfallsicheren Speicher';
         }
-        return 'Za Linux sisteme';
+        return 'Za otpornije skladistenje';
+      case FileSystemFormat.ext2:
+        if (_isEnglish) {
+          return 'Light Linux format';
+        }
+        if (_isGerman) {
+          return 'Leichtes Linux-Format';
+        }
+        return 'Laksi Linux format';
+      case FileSystemFormat.ext3:
+        if (_isEnglish) {
+          return 'Linux with journaling';
+        }
+        if (_isGerman) {
+          return 'Linux mit Journaling';
+        }
+        return 'Linux sa journaling-om';
     }
   }
 
   String formatCompatibilityNote(FileSystemFormat format) {
     switch (format) {
-      case FileSystemFormat.fat32:
+      case FileSystemFormat.fat:
         if (_isEnglish) {
-          return 'Broadest compatibility';
+          return 'Maximum legacy support';
         }
         if (_isGerman) {
-          return 'GroBte Kompatibilitat';
+          return 'Maximale Legacy-Unterstutzung';
         }
-        return 'Najsira kompatibilnost';
+        return 'Najveca podrska za starije uredaje';
+      case FileSystemFormat.fat32:
+        if (_isEnglish) {
+          return 'Wide device support';
+        }
+        if (_isGerman) {
+          return 'Breite Gerateunterstutzung';
+        }
+        return 'Siroka podrska uredaja';
       case FileSystemFormat.ntfs:
         if (_isEnglish) {
           return 'Best for Windows';
@@ -690,6 +750,14 @@ class AppLocalizations {
           return 'Am besten fur Windows';
         }
         return 'Najbolje radi na Windows-u';
+      case FileSystemFormat.udf:
+        if (_isEnglish) {
+          return 'Great for optical media';
+        }
+        if (_isGerman) {
+          return 'Ideal fur optische Medien';
+        }
+        return 'Odlican za opticke medije';
       case FileSystemFormat.exfat:
         if (_isEnglish) {
           return 'Ideal for 4K and large archives';
@@ -698,14 +766,30 @@ class AppLocalizations {
           return 'Ideal fur 4K und groBe Archive';
         }
         return 'Idealan za 4K i velike arhive';
-      case FileSystemFormat.ext4:
+      case FileSystemFormat.refs:
         if (_isEnglish) {
-          return 'Advanced Linux format';
+          return 'Integrity-focused Windows format';
         }
         if (_isGerman) {
-          return 'Erweitertes Linux-Format';
+          return 'Windows-Format mit Fokus auf Integritat';
         }
-        return 'Napredni Linux format';
+        return 'Windows format fokusiran na integritet';
+      case FileSystemFormat.ext2:
+        if (_isEnglish) {
+          return 'Low-overhead Linux option';
+        }
+        if (_isGerman) {
+          return 'Linux-Option mit wenig Overhead';
+        }
+        return 'Linux opcija sa malim overhead-om';
+      case FileSystemFormat.ext3:
+        if (_isEnglish) {
+          return 'Stable Linux journaling';
+        }
+        if (_isGerman) {
+          return 'Stabiles Linux-Journaling';
+        }
+        return 'Stabilan Linux journaling';
     }
   }
 }

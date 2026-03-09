@@ -63,10 +63,10 @@ class ResponsiveUtils {
 
   static double formatGridAspectRatio(double width, {bool isDesktop = false}) {
     if (isDesktop) {
-      if (width >= 1000) {
-        return 1.22;
+      if (width >= 560) {
+        return 0.94;
       }
-      return 1.12;
+      return 1.02;
     }
 
     if (width < 340) {
@@ -76,6 +76,14 @@ class ResponsiveUtils {
       return 0.92;
     }
     return 1.02;
+  }
+
+  static int formatGridCrossAxisCount(double width, {bool isDesktop = false}) {
+    if (isDesktop) {
+      return width >= 560 ? 3 : 2;
+    }
+
+    return 2;
   }
 
   static bool isCompactHeight(BuildContext context) {

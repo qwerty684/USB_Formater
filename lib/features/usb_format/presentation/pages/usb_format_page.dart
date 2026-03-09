@@ -16,6 +16,7 @@ import 'package:usb_formater/features/usb_format/presentation/controllers/usb_fo
 import 'package:usb_formater/features/usb_format/presentation/controllers/usb_format_feedback.dart';
 import 'package:usb_formater/features/usb_format/presentation/controllers/usb_format_state.dart';
 import 'package:usb_formater/features/usb_format/presentation/widgets/confirmation_dialog.dart';
+import 'package:usb_formater/features/usb_format/presentation/widgets/creator_credit_chip.dart';
 import 'package:usb_formater/features/usb_format/presentation/widgets/empty_devices_state.dart';
 import 'package:usb_formater/features/usb_format/presentation/widgets/format_option_card.dart';
 import 'package:usb_formater/features/usb_format/presentation/widgets/formatting_progress_dialog.dart';
@@ -40,6 +41,7 @@ class UsbFormatPage extends ConsumerStatefulWidget {
 
 class _UsbFormatPageState extends ConsumerState<UsbFormatPage> {
   static final Uri _paypalUri = Uri.parse('https://paypal.me/avdoviic');
+  static final Uri _fiverrUri = Uri.parse('https://www.fiverr.com/emiravdovic');
   late final TextEditingController _volumeController;
 
   @override
@@ -146,6 +148,13 @@ class _UsbFormatPageState extends ConsumerState<UsbFormatPage> {
                                   onTap: _openPayPal,
                                 ),
                               ),
+                            ),
+                          ),
+                          SizedBox(height: isDesktopLayout ? 10 : 8),
+                          Center(
+                            child: CreatorCreditChip(
+                              isDesktop: isDesktopLayout,
+                              onTap: _openFiverr,
                             ),
                           ),
                           SizedBox(height: isDesktopLayout ? 34 : 12),
@@ -320,7 +329,10 @@ class _UsbFormatPageState extends ConsumerState<UsbFormatPage> {
           physics: const NeverScrollableScrollPhysics(),
           itemCount: FileSystemFormat.values.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: ResponsiveUtils.formatGridCrossAxisCount(
+              availableWidth,
+              isDesktop: isDesktopLayout,
+            ),
             mainAxisSpacing: gridSpacing,
             crossAxisSpacing: gridSpacing,
             childAspectRatio: ResponsiveUtils.formatGridAspectRatio(
@@ -489,6 +501,19 @@ class _UsbFormatPageState extends ConsumerState<UsbFormatPage> {
 
     if (!launched && mounted) {
       _showSnackBar(context.l10n.couldNotOpenSupportLink, isError: true);
+    }
+  }
+
+  Future<void> _openFiverr() async {
+    HapticFeedback.selectionClick();
+
+    final launched = await launchUrl(
+      _fiverrUri,
+      mode: LaunchMode.externalApplication,
+    );
+
+    if (!launched && mounted) {
+      _showSnackBar(context.l10n.couldNotOpenCreatorLink, isError: true);
     }
   }
 
