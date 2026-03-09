@@ -4,6 +4,21 @@ Premium Flutter project for a modern USB formatting experience on desktop and mo
 
 `USB Format` is an open-source Flutter app with a polished Material 3 interface, desktop-first responsive layout, localization support, and a safe formatting flow simulation designed for future real-device expansion.
 
+
+## Support the Project
+
+If you like this project and want to support future updates, you can buy me a coffee here:
+
+- PayPal: [paypal.me/avdoviic](https://paypal.me/avdoviic)
+
+## Creator
+
+Created by `EM.AV`
+
+- Fiverr: [fiverr.com/emiravdovic](https://www.fiverr.com/emiravdovic)
+- Instagram: [@em.av](https://www.instagram.com/em.av/)
+- PayPal: [paypal.me/avdoviic](https://paypal.me/avdoviic)
+
 ## Preview
 
 <p align="center">
@@ -113,19 +128,6 @@ USB Format is meant to be a clean starting point for developers who want:
 - a polished open-source base for storage tooling
 - a ready-made Riverpod + Material 3 architecture
 
-## Support the Project
-
-If you like this project and want to support future updates, you can buy me a coffee here:
-
-- PayPal: [paypal.me/avdoviic](https://paypal.me/avdoviic)
-
-## Creator
-
-Created by `EM.AV`
-
-- Fiverr: [fiverr.com/emiravdovic](https://www.fiverr.com/emiravdovic)
-- Instagram: [@em.av](https://www.instagram.com/em.av/)
-- PayPal: [paypal.me/avdoviic](https://paypal.me/avdoviic)
 
 ## Contributing
 
